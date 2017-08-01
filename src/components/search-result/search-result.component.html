@@ -1,0 +1,9 @@
+<!-- Generated template for the SearchResultComponent component -->
+<ion-item *ngIf="user" text-wrap>
+  <ion-avatar item-left>
+    <img [src]="user.avatar_url" alt="profile image">
+   </ion-avatar> 
+  <h2>{{user.name}}</h2>
+  <p>{{user.company}}</p>
+  <p text-wrap>{{user.bio}}</p>
+</ion-item>
