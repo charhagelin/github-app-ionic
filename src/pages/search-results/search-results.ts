@@ -13,7 +13,7 @@ import { Repository } from '../../models/repository.interface';
  */
 
 @IonicPage({
-  segment: 'profile/results/:username' //sätter url:n
+  segment: 'profile/results/:username' //sätter url:n och i detta fall slug
 })
 @Component({
   selector: 'page-search-results',
