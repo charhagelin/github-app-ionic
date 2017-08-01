@@ -12,7 +12,9 @@ import { Repository } from '../../models/repository.interface';
  * on Ionic pages and navigation.
  */
 
-@IonicPage()
+@IonicPage({
+  segment: 'profile/results/:username' //sätter url:n
+})
 @Component({
   selector: 'page-search-results',
   templateUrl: 'search-results.html',
@@ -27,9 +29,13 @@ export class SearchResultsPage {
   }
 
   getUserInformation() {
-    this.github.getMockUserInformation(this.username).subscribe((data: User) => this.user = data);  
-    this.github.getMockRepositoryInformation(this.username).subscribe((data: Repository[]) => this.repositories = data);
+    this.github.getUserInformation(this.username).subscribe((data: User ) => this.user = data);
+    this.github.getRepositoryInformation(this.username).subscribe((data: Repository[] ) => this.repositories = data);
+    // this.github.getMockUserInformation(this.username).subscribe((data: User) => this.user = data);  
+    // this.github.getMockRepositoryInformation(this.username).subscribe((data: Repository[]) => this.repositories = data);
   }
+
+
 
   ionViewDidLoad() {
     this.username = this.navParams.get('username');
